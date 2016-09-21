@@ -47,8 +47,8 @@ resource "aws_launch_configuration" "lc_ebs" {
   count                       = "${signum(length(var.ebs_device_name))}"
   name_prefix                 = "${var.name}-"
   image_id                    = "${var.ami}"
-  instance_type               = "${aws_iam_instance_profile.lc_instance_profile.name}"
-  iam_instance_profile        = "${var.instance_profile}"
+  instance_type               = "${var.instance_type}"
+  iam_instance_profile        = "${aws_iam_instance_profile.lc_instance_profile.name}"
   key_name                    = "${var.key_name}"
   security_groups             = ["${aws_security_group.sg_asg.id}"]
   associate_public_ip_address = "${var.associate_public_ip_address}"
