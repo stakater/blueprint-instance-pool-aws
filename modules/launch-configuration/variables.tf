@@ -16,10 +16,6 @@ variable "instance_type" {
   type = "string"
 }
 
-variable "instance_profile" {
-  type = "string"
-}
-
 variable "key_name" {
   type = "string"
 }
@@ -48,11 +44,19 @@ variable "root_vol_type" {
   type = "string"
 }
 
+variable "root_vol_size" {
+  type = "string"
+}
+
 variable "root_vol_del_on_term" {
   type = "string"
 }
 
 variable "ebs_vol_type" {
+  type = "string"
+}
+
+variable "ebs_vol_size" {
   type = "string"
 }
 
@@ -65,5 +69,13 @@ variable "ebs_snapshot_id" {
 }
 
 variable "ebs_vol_del_on_term" {
+  type = "string"
+}
+
+variable "iam_assume_role_policy" {
+  type = "string"
+}
+
+variable "iam_role_policy" {
   type = "string"
 }

@@ -21,7 +21,7 @@ resource "aws_launch_configuration" "lc" {
   name_prefix                 = "${var.name}-"
   image_id                    = "${var.ami}"
   instance_type               = "${var.instance_type}"
-  iam_instance_profile        = "${var.instance_profile}"
+  iam_instance_profile        = "${aws_iam_instance_profile.lc_instance_profile.name}"
   key_name                    = "${var.key_name}"
   security_groups             = ["${aws_security_group.sg_asg.id}"]
   associate_public_ip_address = "${var.associate_public_ip_address}"
@@ -33,6 +33,7 @@ resource "aws_launch_configuration" "lc" {
   root_block_device {
     volume_type           = "${var.root_vol_type}"
     delete_on_termination = "${var.root_vol_del_on_term}"
+    volume_size           = "${var.root_vol_size}"
   }
 
   lifecycle {
@@ -46,7 +47,7 @@ resource "aws_launch_configuration" "lc_ebs" {
   count                       = "${signum(length(var.ebs_device_name))}"
   name_prefix                 = "${var.name}-"
   image_id                    = "${var.ami}"
-  instance_type               = "${var.instance_type}"
+  instance_type               = "${aws_iam_instance_profile.lc_instance_profile.name}"
   iam_instance_profile        = "${var.instance_profile}"
   key_name                    = "${var.key_name}"
   security_groups             = ["${aws_security_group.sg_asg.id}"]
@@ -59,10 +60,12 @@ resource "aws_launch_configuration" "lc_ebs" {
   root_block_device {
     volume_type           = "${var.root_vol_type}"
     delete_on_termination = "${var.root_vol_del_on_term}"
+    volume_size           = "${var.root_vol_size}"
   }
 
   ebs_block_device {
     volume_type           = "${var.ebs_vol_type}"
+    volume_size           = "${var.ebs_vol_size}"
     device_name           = "${var.ebs_device_name}"
     delete_on_termination = "${var.ebs_vol_del_on_term}"
   }

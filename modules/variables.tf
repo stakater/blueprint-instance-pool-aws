@@ -33,11 +33,6 @@ variable "instance_type" {
   description = "EC2 instance type to associate with the launch configuration."
 }
 
-variable "instance_profile" {
-  type        = "string"
-  description = "IAM instance profile to associate with the launch configuration."
-}
-
 variable "key_name" {
   type        = "string"
   description = "SSH key pair to associate with the launch configuration."
@@ -78,6 +73,12 @@ variable "root_vol_type" {
   default     = "gp2"
 }
 
+variable "root_vol_size" {
+  type        = "string"
+  description = "The Size of the root volume"
+  default     = "12"
+}
+
 variable "root_vol_del_on_term" {
   type        = "string"
   description = "Whether the volume should be destroyed on instance termination."
@@ -88,6 +89,12 @@ variable "ebs_vol_type" {
   type        = "string"
   description = "The type of volume. Valid values are 'standard' or 'gp2'."
   default     = "gp2"
+}
+
+variable "ebs_vol_size" {
+  type        = "string"
+  description = "The Size of the ebs volume"
+  default     = "12"
 }
 
 variable "ebs_device_name" {
@@ -106,6 +113,16 @@ variable "ebs_vol_del_on_term" {
   type        = "string"
   description = "Whether the volume should be destroyed on instance termination."
   default     = true
+}
+
+variable "iam_assume_role_policy" {
+  type = "string"
+  description = "Assume role policy for IAM role"
+}
+
+variable "iam_role_policy" {
+  type = "string"
+  description = "AWS IAM role policy"
 }
 
 ## ASG parameters
