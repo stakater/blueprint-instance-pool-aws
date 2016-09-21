@@ -12,7 +12,6 @@ module "launch-configuration" {
   ## LC parameters
   ami                         = "${var.ami}"
   instance_type               = "${var.instance_type}"
-  instance_profile            = "${var.instance_profile}"
   key_name                    = "${var.key_name}"
   associate_public_ip_address = "${var.associate_public_ip_address}"
   user_data                   = "${var.user_data}"
