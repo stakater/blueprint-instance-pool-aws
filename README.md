@@ -3,8 +3,8 @@ This blueprint contains modules that are used to set up a best practices instanc
 
 - Instance Pool
   - Launch Configuration
-  - Autoscaling Group
-  - Elastic Load Balancer
+  - Auto Scaling Group
+  - Auto Scaling Group Policy
 
 ## What is a blueprint?
 
