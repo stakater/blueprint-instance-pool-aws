@@ -1,10 +1,10 @@
 # blueprint-instance-pool-aws
 This blueprint contains modules that are used to set up a best practices instance pool in your AWS account.
 
-    Instance Pool
-        Launch Configuration
-        Autoscaling Group
-        Elastic Load Balancer
+- Instance Pool
+  - Launch Configuration
+  - Autoscaling Group
+  - Elastic Load Balancer
 
 What is a blueprint?
 
