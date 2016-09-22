@@ -13,6 +13,8 @@ module "launch-configuration" {
   ami                         = "${var.ami}"
   instance_type               = "${var.instance_type}"
   key_name                    = "${var.key_name}"
+  iam_assume_role_policy      = "${var.iam_assume_role_policy}"
+  iam_role_policy             = "${var.iam_role_policy}"
   associate_public_ip_address = "${var.associate_public_ip_address}"
   user_data                   = "${var.user_data}"
   enable_monitoring           = "${var.enable_monitoring}"
