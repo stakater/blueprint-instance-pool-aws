@@ -8,6 +8,7 @@ module "launch-configuration" {
 
   ### VPC parameters
   vpc_id = "${var.vpc_id}"
+  vpc_cidr = "${var.vpc_cidr}"
 
   ## LC parameters
   ami                         = "${var.ami}"
