@@ -46,4 +46,5 @@ variable "load_balancers" {
 
 variable "min_elb_capacity" {
   type = "string"
+  default = ""
 }
