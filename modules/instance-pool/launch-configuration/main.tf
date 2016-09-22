@@ -8,6 +8,22 @@ resource "aws_security_group" "security_group" {
     managed_by  = "stakater"
   }
 
+  # Allow ssh from within vpc
+  ingress {
+    cidr_blocks = ["${var.vpc_cidr}"]
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+  }
+
+  # Allow Outgoing traffic
+  egress {
+    cidr_blocks = ["0.0.0.0/0"]
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+  }
+
   lifecycle {
     create_before_destroy = true
   }
