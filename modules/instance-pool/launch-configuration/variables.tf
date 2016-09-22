@@ -65,6 +65,7 @@ variable "ebs_vol_size" {
 
 variable "ebs_device_name" {
   type = "string"
+  default = "/dev/xvda"
 }
 
 variable "ebs_snapshot_id" {
