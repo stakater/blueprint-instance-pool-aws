@@ -1,6 +1,6 @@
 ## Creates IAM role
 resource "aws_iam_role" "lc_role" {
-  name = "${var.name}-${var.region}"
+  name = "${var.name}-role"
   path = "/"
 
   lifecycle {
@@ -11,8 +11,8 @@ resource "aws_iam_role" "lc_role" {
 }
 
 resource "aws_iam_instance_profile" "lc_instance_profile" {
-  name  = "${var.name}-${var.region}"
-  roles = ["${aws_iam_role.role.name}"]
+  name  = "${var.name}-inst-profile"
+  roles = ["${aws_iam_role.lc_role.name}"]
 
   lifecycle {
     create_before_destroy = true
@@ -21,7 +21,7 @@ resource "aws_iam_instance_profile" "lc_instance_profile" {
 
 resource "aws_iam_role_policy" "lc_role_policy" {
   name = "${var.name}-role-policy"
-  role = "${aws_iam_role.role.id}"
+  role = "${aws_iam_role.lc_role.id}"
 
   lifecycle {
     create_before_destroy = true

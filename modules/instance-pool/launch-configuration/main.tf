@@ -23,7 +23,7 @@ resource "aws_launch_configuration" "lc" {
   instance_type               = "${var.instance_type}"
   iam_instance_profile        = "${aws_iam_instance_profile.lc_instance_profile.name}"
   key_name                    = "${var.key_name}"
-  security_groups             = ["${aws_security_group.sg_asg.id}"]
+  security_groups             = ["${aws_security_group.security_group.id}"]
   associate_public_ip_address = "${var.associate_public_ip_address}"
   user_data                   = "${var.user_data}"
   enable_monitoring           = "${var.enable_monitoring}"
@@ -50,7 +50,7 @@ resource "aws_launch_configuration" "lc_ebs" {
   instance_type               = "${var.instance_type}"
   iam_instance_profile        = "${aws_iam_instance_profile.lc_instance_profile.name}"
   key_name                    = "${var.key_name}"
-  security_groups             = ["${aws_security_group.sg_asg.id}"]
+  security_groups             = ["${aws_security_group.security_group.id}"]
   associate_public_ip_address = "${var.associate_public_ip_address}"
   user_data                   = "${var.user_data}"
   enable_monitoring           = "${var.enable_monitoring}"
