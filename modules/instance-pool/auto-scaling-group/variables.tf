@@ -41,7 +41,7 @@ variable "wait_for_capacity_timeout" {
 }
 
 variable "load_balancers" {
-  type = "string"
+  type = "list"
 }
 
 variable "min_elb_capacity" {

@@ -38,7 +38,7 @@ resource "aws_autoscaling_group" "asg_elb" {
   health_check_type         = "${var.hc_check_type}"
   force_delete              = "${var.force_delete}"
   min_elb_capacity          = "${var.min_elb_capacity}"
-  load_balancers            = ["${split(",",var.load_balancers)}"]
+  load_balancers            = "${var.load_balancers}"
   vpc_zone_identifier       = ["${split(",",var.subnets)}"]
   wait_for_capacity_timeout = "${var.wait_for_capacity_timeout}"
 
