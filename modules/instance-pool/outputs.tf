@@ -5,7 +5,7 @@ output "security_group_id" {
 }
 
 output "launch_configuration_id" {
-  value = "${module.launch-configuration..launch_configuration_id}"
+  value = "${module.launch-configuration.launch_configuration_id}"
 }
 
 output "asg_id" {
