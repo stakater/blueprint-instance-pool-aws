@@ -163,7 +163,7 @@ variable "wait_for_capacity_timeout" {
 variable "load_balancers" {
   type        = "list"
   description = "List of load balancer names to associate with the auto scaling group."
-  default     = "[]"
+  default     = []
 }
 
 variable "min_elb_capacity" {
