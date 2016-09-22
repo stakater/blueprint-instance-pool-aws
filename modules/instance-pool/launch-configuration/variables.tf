@@ -6,6 +6,9 @@ variable "name" {
 variable "vpc_id" {
   type = "string"
 }
+variable "vpc_cidr" {
+  type = "string"
+}
 
 ## LC parameters
 variable "ami" {
