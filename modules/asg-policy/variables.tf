@@ -23,7 +23,7 @@ variable "notifications" {
 variable "adjustment_type" {
   type        = "string"
   description = "Specifies the scaling adjustment.  Valid values are 'ChangeInCapacity', 'ExactCapacity' or 'PercentChangeInCapacity'."
-  default = "" # Default value given due to: https://github.com/hashicorp/terraform/issues/8146
+  default = "ChangeInCapacity" # Default value given due to: https://github.com/hashicorp/terraform/issues/8146
 }
 
 variable "scaling_adjustment" {
