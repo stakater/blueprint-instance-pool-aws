@@ -11,6 +11,10 @@ variable "asg_name" {
   type        = "string"
   description = "Name of the ASG to associate the alarm with."
 }
+variable "asg_id" {
+  type        = "string"
+  description = "ID of the ASG to associate the notifications with."
+}
 
 ## Notification parameters
 variable "notifications" {
