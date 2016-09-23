@@ -89,31 +89,61 @@ variable "root_vol_del_on_term" {
   default     = true
 }
 
-variable "ebs_vol_type" {
+variable "data_ebs_vol_type" {
   type        = "string"
   description = "The type of volume. Valid values are 'standard' or 'gp2'."
   default     = "gp2"
 }
 
-variable "ebs_vol_size" {
+variable "data_ebs_vol_size" {
   type        = "string"
   description = "The Size of the ebs volume"
   default     = "12"
 }
 
-variable "ebs_device_name" {
+variable "data_ebs_device_name" {
   type        = "string"
   description = "The name of the device to mount."
-  default     = "/dev/xvda"
+  default     = "/dev/sdf"
 }
 
-variable "ebs_snapshot_id" {
+variable "data_ebs_snapshot_id" {
   type        = "string"
   description = "The Snapshot ID to mount."
   default     = ""
 }
 
-variable "ebs_vol_del_on_term" {
+variable "data_ebs_vol_del_on_term" {
+  type        = "string"
+  description = "Whether the volume should be destroyed on instance termination."
+  default     = true
+}
+
+variable "logs_ebs_vol_type" {
+  type        = "string"
+  description = "The type of volume. Valid values are 'standard' or 'gp2'."
+  default     = "gp2"
+}
+
+variable "logs_ebs_vol_size" {
+  type        = "string"
+  description = "The Size of the ebs volume"
+  default     = "12"
+}
+
+variable "logs_ebs_device_name" {
+  type        = "string"
+  description = "The name of the device to mount."
+  default     = "/dev/sdf"
+}
+
+variable "logs_ebs_snapshot_id" {
+  type        = "string"
+  description = "The Snapshot ID to mount."
+  default     = ""
+}
+
+variable "logs_ebs_vol_del_on_term" {
   type        = "string"
   description = "Whether the volume should be destroyed on instance termination."
   default     = true

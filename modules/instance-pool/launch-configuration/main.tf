@@ -33,7 +33,7 @@ resource "aws_security_group" "security_group" {
 resource "aws_launch_configuration" "lc" {
   # if ebs device name is not given or is empty,
   # this count will be 1 resulting in the creation of this resource
-  count                       = "${signum(length(var.ebs_device_name)) + 1 % 2}"
+  count                       = "${signum(length(var.data_ebs_device_name)) + 1 % 2}"
   name_prefix                 = "${var.name}-"
   image_id                    = "${var.ami}"
   instance_type               = "${var.instance_type}"
@@ -60,7 +60,7 @@ resource "aws_launch_configuration" "lc" {
 resource "aws_launch_configuration" "lc_ebs" {
   # if ebs device name is not empty, this count will be 1
   # resulting in the creation of this resource
-  count                       = "${signum(length(var.ebs_device_name))}"
+  count                       = "${signum(length(var.data_ebs_device_name))}"
   name_prefix                 = "${var.name}-"
   image_id                    = "${var.ami}"
   instance_type               = "${var.instance_type}"
@@ -79,11 +79,22 @@ resource "aws_launch_configuration" "lc_ebs" {
     volume_size           = "${var.root_vol_size}"
   }
 
+  # EBS Volume for Data
   ebs_block_device {
-    volume_type           = "${var.ebs_vol_type}"
-    volume_size           = "${var.ebs_vol_size}"
-    device_name           = "${var.ebs_device_name}"
-    delete_on_termination = "${var.ebs_vol_del_on_term}"
+    volume_type           = "${var.data_ebs_vol_type}"
+    volume_size           = "${var.data_ebs_vol_size}"
+    device_name           = "${var.data_ebs_device_name}"
+    snapshot_id           = "${var.data_ebs_snapshot_id}"
+    delete_on_termination = "${var.data_ebs_vol_del_on_term}"
+  }
+
+  # EBS Volume for Logs
+  ebs_block_device {
+    volume_type           = "${var.logs_ebs_vol_type}"
+    volume_size           = "${var.logs_ebs_vol_size}"
+    device_name           = "${var.logs_ebs_device_name}"
+    snapshot_id           = "${var.logs_ebs_snapshot_id}"
+    delete_on_termination = "${var.logs_ebs_vol_del_on_term}"
   }
 
   lifecycle {

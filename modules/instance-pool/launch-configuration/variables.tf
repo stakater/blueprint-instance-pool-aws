@@ -55,24 +55,45 @@ variable "root_vol_del_on_term" {
   type = "string"
 }
 
-variable "ebs_vol_type" {
+variable "data_ebs_vol_type" {
   type = "string"
 }
 
-variable "ebs_vol_size" {
+variable "data_ebs_vol_size" {
   type = "string"
 }
 
-variable "ebs_device_name" {
+variable "data_ebs_device_name" {
   type = "string"
-  default = "/dev/xvda"
+  default = "/dev/sdf"
 }
 
-variable "ebs_snapshot_id" {
+variable "data_ebs_snapshot_id" {
   type = "string"
 }
 
-variable "ebs_vol_del_on_term" {
+variable "data_ebs_vol_del_on_term" {
+  type = "string"
+}
+
+variable "logs_ebs_vol_type" {
+  type = "string"
+}
+
+variable "logs_ebs_vol_size" {
+  type = "string"
+}
+
+variable "logs_ebs_device_name" {
+  type = "string"
+  default = "/dev/sdg"
+}
+
+variable "logs_ebs_snapshot_id" {
+  type = "string"
+}
+
+variable "logs_ebs_vol_del_on_term" {
   type = "string"
 }
 
