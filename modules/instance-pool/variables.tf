@@ -134,7 +134,7 @@ variable "logs_ebs_vol_size" {
 variable "logs_ebs_device_name" {
   type        = "string"
   description = "The name of the device to mount."
-  default     = "/dev/sdf"
+  default     = "/dev/sdg"
 }
 
 variable "logs_ebs_snapshot_id" {
