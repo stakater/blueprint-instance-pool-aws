@@ -30,11 +30,11 @@ resource "aws_sns_topic" "sns_asg" {
 
 ## Configures autoscaling notifications
 ### Commented to remove error "aws_autoscaling_notification.asg_notify: diffs didn't match during apply"
-#resource "aws_autoscaling_notification" "asg_notify" {
-#  group_names   = ["${var.asg_name}"]
-#  notifications = ["${split(",",var.notifications)}"]
-#  topic_arn     = "${aws_sns_topic.sns_asg.arn}"
-#}
+resource "aws_autoscaling_notification" "asg_notify" {
+  group_names   = ["${var.asg_name}"]
+  notifications = ["${split(",",var.notifications)}"]
+  topic_arn     = "${aws_sns_topic.sns_asg.arn}"
+}
 
 ## Creates CloudWatch monitor
 resource "aws_cloudwatch_metric_alarm" "monitor_asg" {
