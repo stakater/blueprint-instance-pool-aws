@@ -1,6 +1,7 @@
 ## Creates IAM role
 resource "aws_iam_role" "lc_role" {
-  name = "${var.name}-role"
+  # Same name for instance profile and role, for ease while fetching data using AWS meta-data API
+  name = "${var.name}"
   path = "/"
 
   lifecycle {
@@ -11,7 +12,8 @@ resource "aws_iam_role" "lc_role" {
 }
 
 resource "aws_iam_instance_profile" "lc_instance_profile" {
-  name  = "${var.name}-inst-profile"
+  # Same name for instance profile and role, for ease while fetching data using AWS meta-data API
+  name  = "${var.name}"
   roles = ["${aws_iam_role.lc_role.name}"]
 
   lifecycle {
