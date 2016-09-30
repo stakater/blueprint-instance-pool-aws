@@ -30,7 +30,7 @@ resource "aws_autoscaling_group" "asg_elb" {
   # if load balancer id(s) is not empty,
   # this count will be 1 resulting in the creation of this resource
   count                     = "${signum(length(var.min_elb_capacity))}"
-  name                      = "${var.lc_id}"
+  name                      = "${var.lc_id}-asg"
   max_size                  = "${var.max_size}"
   min_size                  = "${var.min_size}"
   launch_configuration      = "${var.lc_id}"

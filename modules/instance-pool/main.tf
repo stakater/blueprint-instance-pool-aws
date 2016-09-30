@@ -44,7 +44,7 @@ module "auto-scaling-group" {
   source = "./auto-scaling-group"
 
   ### Resource tags
-  name    = "${var.name}-asg"
+  name    = "${var.name}"
 
   ### VPC parameters
   subnets = "${var.subnets}"
