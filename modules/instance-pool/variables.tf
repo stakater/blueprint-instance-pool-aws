@@ -11,10 +11,6 @@ variable "vpc_id" {
   type        = "string"
   description = "ID of the target VPC."
 }
-variable "vpc_cidr" {
-  type        = "string"
-  description = "CIDR of the target VPC."
-}
 
 variable "region" {
   type        = "string"
