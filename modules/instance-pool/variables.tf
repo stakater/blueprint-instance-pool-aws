@@ -82,7 +82,7 @@ variable "root_vol_size" {
 variable "root_vol_del_on_term" {
   type        = "string"
   description = "Whether the volume should be destroyed on instance termination."
-  default     = true
+  default     = false
 }
 
 variable "data_ebs_vol_type" {
@@ -112,7 +112,7 @@ variable "data_ebs_snapshot_id" {
 variable "data_ebs_vol_del_on_term" {
   type        = "string"
   description = "Whether the volume should be destroyed on instance termination."
-  default     = true
+  default     = false
 }
 
 variable "logs_ebs_vol_type" {
@@ -142,7 +142,7 @@ variable "logs_ebs_snapshot_id" {
 variable "logs_ebs_vol_del_on_term" {
   type        = "string"
   description = "Whether the volume should be destroyed on instance termination."
-  default     = true
+  default     = false
 }
 
 variable "iam_assume_role_policy" {
