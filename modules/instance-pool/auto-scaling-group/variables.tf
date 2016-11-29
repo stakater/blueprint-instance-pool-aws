@@ -24,6 +24,10 @@ variable "min_size" {
   type = "string"
 }
 
+variable "desired_capacity" {
+  type = "string"
+}
+
 variable "hc_grace_period" {
   type = "string"
 }
