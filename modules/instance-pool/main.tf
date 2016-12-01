@@ -54,6 +54,7 @@ module "auto-scaling-group" {
   ### ASG parameters
   max_size                  = "${var.max_size}"
   min_size                  = "${var.min_size}"
+  desired_capacity          = "${var.desired_size}"
   hc_grace_period           = "${var.hc_grace_period}"
   hc_check_type             = "${var.hc_check_type}"
   force_delete              = "${var.force_delete}"
