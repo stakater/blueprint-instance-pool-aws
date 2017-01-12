@@ -172,6 +172,11 @@ variable "min_size" {
   description = "Minimum number of instance to be maintained by the auto scaling group."
 }
 
+variable "desired_size" {
+  type        = "string"
+  description = "Desired number of instance to be maintained by the auto scaling group."
+}
+
 variable "hc_grace_period" {
   type        = "string"
   description = "Time allowed after an instance comes into service before checking health."
