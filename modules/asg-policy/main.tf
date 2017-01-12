@@ -8,6 +8,7 @@ resource "aws_autoscaling_policy" "asg_policy" {
   scaling_adjustment     = "${var.scaling_adjustment}"
   cooldown               = "${var.cooldown}"
   policy_type            = "SimpleScaling"
+  provider               = "${var.provider}"
 }
 
 ## Creates simple percentage scaling policy
@@ -20,12 +21,14 @@ resource "aws_autoscaling_policy" "asg_policy_percent" {
   min_adjustment_magnitude = "${var.min_adjustment_magnitude}"
   cooldown                 = "${var.cooldown}"
   policy_type              = "SimpleScaling"
+  provider                 = "${var.provider}"
 }
 
 ## Creates Simple Notification Service (SNS) topic
 resource "aws_sns_topic" "sns_asg" {
   name         = "${var.name}-asg"
   display_name = "${var.name} ASG SNS topic"
+  provider     = "${var.provider}"
 }
 
 ## Configures autoscaling notifications
@@ -33,6 +36,7 @@ resource "aws_autoscaling_notification" "asg_notify" {
   group_names   = ["${var.asg_id}"]
   notifications = ["${split(",",var.notifications)}"]
   topic_arn     = "${aws_sns_topic.sns_asg.arn}"
+  provider      = "${var.provider}"
 }
 
 ## Creates CloudWatch monitor
@@ -46,6 +50,7 @@ resource "aws_cloudwatch_metric_alarm" "monitor_asg" {
   period              = "${var.period}"
   statistic           = "${lookup(var.valid_statistics, var.statistic)}"
   threshold           = "${var.threshold}"
+  provider            = "${var.provider}"
 
   dimensions = {
     "AutoScalingGroupName" = "${var.asg_name}"

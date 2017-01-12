@@ -15,6 +15,12 @@ variable "lc_id" {
   type = "string"
 }
 
+variable "provider" {
+  type = "string"
+  default = "aws"
+  description = "AWS provider to be utilized."
+}
+
 ## ASG parameters
 variable "max_size" {
   type = "string"

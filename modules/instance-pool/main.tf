@@ -36,6 +36,8 @@ module "launch-configuration" {
   logs_ebs_device_name        = "${var.logs_ebs_device_name}"
   logs_ebs_snapshot_id        = "${var.logs_ebs_snapshot_id}"
   logs_ebs_vol_del_on_term    = "${var.logs_ebs_vol_del_on_term}"
+
+  provider                    = "${var.provider}"
 }
 
 ## Creates auto scaling group
@@ -60,4 +62,6 @@ module "auto-scaling-group" {
   wait_for_capacity_timeout = "${var.wait_for_capacity_timeout}"
   load_balancers            = "${var.load_balancers}"
   min_elb_capacity          = "${var.min_elb_capacity}"
+
+  provider                  = "${var.provider}"
 }

@@ -7,6 +7,12 @@ variable "vpc_id" {
   type = "string"
 }
 
+variable "provider" {
+  type = "string"
+  default = "aws"
+  description = "AWS provider to be utilized."
+}
+
 ## LC parameters
 variable "ami" {
   type = "string"
