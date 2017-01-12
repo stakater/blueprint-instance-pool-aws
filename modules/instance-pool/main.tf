@@ -37,7 +37,7 @@ module "launch-configuration" {
   logs_ebs_snapshot_id        = "${var.logs_ebs_snapshot_id}"
   logs_ebs_vol_del_on_term    = "${var.logs_ebs_vol_del_on_term}"
 
-  provider                    = "${var.prov}"
+  provider                    = "aws.euwest1"
 }
 
 ## Creates auto scaling group
@@ -63,5 +63,5 @@ module "auto-scaling-group" {
   load_balancers            = "${var.load_balancers}"
   min_elb_capacity          = "${var.min_elb_capacity}"
 
-  provider                  = "${var.prov}"
+  provider                  = "aws.euwest1"
 }
