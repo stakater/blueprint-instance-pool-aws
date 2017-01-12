@@ -15,7 +15,7 @@ variable "lc_id" {
   type = "string"
 }
 
-variable "provider" {
+variable "prov" {
   type = "string"
   default = "aws"
   description = "AWS provider to be utilized."

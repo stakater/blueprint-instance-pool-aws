@@ -17,7 +17,7 @@ variable "region" {
   description = "AWS region to be utilized."
 }
 
-variable "provider" {
+variable "prov" {
   type = "string"
   default = "aws"
   description = "AWS provider to be utilized."
