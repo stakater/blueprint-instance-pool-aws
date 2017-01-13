@@ -4,6 +4,7 @@ resource "aws_security_group" "security_group" {
   vpc_id      = "${var.vpc_id}"
 
   provider = "aws.provider"
+  region = "eu-west-1"
 
   tags {
     Name        = "${var.name}-sg"
