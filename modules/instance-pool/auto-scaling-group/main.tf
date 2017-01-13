@@ -46,7 +46,6 @@ resource "aws_autoscaling_group" "asg_elb" {
   vpc_zone_identifier       = ["${split(",",var.subnets)}"]
   wait_for_capacity_timeout = "${var.wait_for_capacity_timeout}"
   provider                  = "aws.provider"
-  region                  = "eu-west-1"
 
   lifecycle {
     create_before_destroy = true
