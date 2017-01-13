@@ -57,8 +57,3 @@ resource "aws_autoscaling_group" "asg_elb" {
     propagate_at_launch = true
   }
 }
-
-provider "aws" {
-  alias = "provider"
-  region = "eu-west-1"
-}

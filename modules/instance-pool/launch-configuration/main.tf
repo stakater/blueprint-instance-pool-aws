@@ -89,8 +89,3 @@ resource "aws_launch_configuration" "lc_ebs" {
     create_before_destroy = true
   }
 }
-
-provider "aws" {
-  alias = "provider"
-  region = "eu-west-1"
-}

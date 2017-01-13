@@ -5,13 +5,6 @@ variable "name" {
   type        = "string"
   description = "Identifier for this stack. This value is used to create the 'Name' resource tag for resources created by this stack item, and also serves as a unique key for re-use."
 }
-
-variable "prov" {
-  type = "string"
-  default = "aws"
-  description = "AWS provider to be utilized."
-}
-
 ## ASG parameters
 variable "asg_name" {
   type        = "string"
