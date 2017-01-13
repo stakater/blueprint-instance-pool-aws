@@ -31,7 +31,8 @@ resource "aws_launch_configuration" "lc" {
   enable_monitoring           = "${var.enable_monitoring}"
   ebs_optimized               = "${var.ebs_optimized}"
   placement_tenancy           = "${var.placement_tenancy}"
-  provider                    = "aws.provider"
+  provider                  = "aws.provider"
+  region                  = "eu-west-1"
 
   root_block_device {
     volume_type           = "${var.root_vol_type}"
@@ -59,8 +60,8 @@ resource "aws_launch_configuration" "lc_ebs" {
   enable_monitoring           = "${var.enable_monitoring}"
   ebs_optimized               = "${var.ebs_optimized}"
   placement_tenancy           = "${var.placement_tenancy}"
-  provider                    = "aws.provider"
-
+  provider                  = "aws.provider"
+  region                  = "eu-west-1"
   root_block_device {
     volume_type           = "${var.root_vol_type}"
     delete_on_termination = "${var.root_vol_del_on_term}"
