@@ -3,8 +3,6 @@ resource "aws_security_group" "security_group" {
   description = "${var.name} security group"
   vpc_id      = "${var.vpc_id}"
 
-  provider = "aws.provider"
-
   tags {
     Name        = "${var.name}-sg"
     managed_by  = "stakater"
@@ -31,7 +29,6 @@ resource "aws_launch_configuration" "lc" {
   enable_monitoring           = "${var.enable_monitoring}"
   ebs_optimized               = "${var.ebs_optimized}"
   placement_tenancy           = "${var.placement_tenancy}"
-  provider                  = "aws.provider"
 
   root_block_device {
     volume_type           = "${var.root_vol_type}"
@@ -59,7 +56,6 @@ resource "aws_launch_configuration" "lc_ebs" {
   enable_monitoring           = "${var.enable_monitoring}"
   ebs_optimized               = "${var.ebs_optimized}"
   placement_tenancy           = "${var.placement_tenancy}"
-  provider                  = "aws.provider"
 
   root_block_device {
     volume_type           = "${var.root_vol_type}"

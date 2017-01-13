@@ -6,7 +6,6 @@ resource "aws_autoscaling_group" "asg" {
   # this count will be 1 resulting in the creation of this resource
   count                     = "${signum(length(var.min_elb_capacity)) + 1 % 2}"
   name                      = "${var.lc_id}-asg"
-  provider                  = "aws.provider"
   max_size                  = "${var.max_size}"
   min_size                  = "${var.min_size}"
   desired_capacity          = "${var.desired_capacity}"
@@ -16,8 +15,7 @@ resource "aws_autoscaling_group" "asg" {
   force_delete              = "${var.force_delete}"
   vpc_zone_identifier       = ["${split(",",var.subnets)}"]
   wait_for_capacity_timeout = "${var.wait_for_capacity_timeout}"
-  provider                  = "aws.provider"
-  region                  = "eu-west-1"
+
   lifecycle {
     create_before_destroy = true
   }
@@ -45,7 +43,6 @@ resource "aws_autoscaling_group" "asg_elb" {
   load_balancers            = ["${split(",",var.load_balancers)}"]
   vpc_zone_identifier       = ["${split(",",var.subnets)}"]
   wait_for_capacity_timeout = "${var.wait_for_capacity_timeout}"
-  provider                  = "aws.provider"
 
   lifecycle {
     create_before_destroy = true

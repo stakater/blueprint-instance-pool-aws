@@ -65,6 +65,5 @@ module "auto-scaling-group" {
 
 }
 provider "aws"{
-  alias = "provider"
   region = "${var.region}"
 }
