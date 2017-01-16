@@ -20,6 +20,7 @@ variable "region" {
 variable "aws_region" {
   type        = "string"
   description = "AWS region to be utilized."
+  default = "eu-west-1"
 }
 
 variable "subnets" {
