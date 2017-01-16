@@ -43,7 +43,6 @@ module "launch-configuration" {
 module "auto-scaling-group" {
   source = "./auto-scaling-group"
 
-  region = "${var.region}"
   ### Resource tags
   name    = "${var.name}"
 
@@ -64,7 +63,4 @@ module "auto-scaling-group" {
   load_balancers            = "${var.load_balancers}"
   min_elb_capacity          = "${var.min_elb_capacity}"
 
-}
-provider "aws"{
-  region = "${var.region}"
 }

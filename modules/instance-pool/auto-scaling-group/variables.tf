@@ -10,10 +10,6 @@ variable "subnets" {
   type = "string"
 }
 
-variable "region" {
-  default = ""
-}
-
 ## LC parameters
 variable "lc_id" {
   type = "string"
