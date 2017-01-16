@@ -15,3 +15,7 @@ output "asg_id" {
 output "asg_name" {
   value = "${module.auto-scaling-group.asg_name}"
 }
+
+output "region" {
+  value = "${var.region}"
+}
