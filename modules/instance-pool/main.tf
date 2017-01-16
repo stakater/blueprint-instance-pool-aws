@@ -64,3 +64,7 @@ module "auto-scaling-group" {
   min_elb_capacity          = "${var.min_elb_capacity}"
 
 }
+
+provider "aws"{
+  region = "${var.region}"
+}
