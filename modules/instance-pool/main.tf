@@ -43,6 +43,7 @@ module "launch-configuration" {
 module "auto-scaling-group" {
   source = "./auto-scaling-group"
 
+  region = "${var.region}"
   ### Resource tags
   name    = "${var.name}"
 
