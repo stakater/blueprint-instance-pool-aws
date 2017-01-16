@@ -17,6 +17,11 @@ variable "region" {
   description = "AWS region to be utilized."
 }
 
+variable "aws_region" {
+  type        = "string"
+  description = "AWS region to be utilized."
+}
+
 variable "subnets" {
   type        = "string"
   description = "List of VPC subnets to associate with the auto scaling group."
