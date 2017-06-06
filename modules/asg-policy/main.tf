@@ -17,7 +17,6 @@ resource "aws_autoscaling_policy" "asg_policy_percent" {
   autoscaling_group_name   = "${var.asg_name}"
   adjustment_type          = "${var.adjustment_type}"
   scaling_adjustment       = "${var.scaling_adjustment}"
-  min_adjustment_magnitude = "${var.min_adjustment_magnitude}"
   cooldown                 = "${var.cooldown}"
   policy_type              = "SimpleScaling"
 }

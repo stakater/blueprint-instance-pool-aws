@@ -40,12 +40,6 @@ variable "cooldown" {
   description = "Seconds between auto scaling activities."
 }
 
-variable "min_adjustment_magnitude" {
-  type        = "string"
-  description = "Minimum number of instances to be involved in a scaling adjustment based on percentage of capacity."
-  default     = 1
-}
-
 ## Conditional toggles
 variable "selector" {
   type = "map"
