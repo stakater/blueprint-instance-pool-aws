@@ -15,11 +15,3 @@ output "asg_id" {
 output "asg_name" {
   value = "${module.auto-scaling-group.asg_name}"
 }
-
-#TEST
-output "test-output-length" {
-  value = "${module.auto-scaling-group.test-output-length}"
-}
-output "test-output-signum" {
-  value = "${module.auto-scaling-group.test-output-signum}"
-}
