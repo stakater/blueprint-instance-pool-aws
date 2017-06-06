@@ -26,7 +26,12 @@ resource "aws_autoscaling_group" "asg" {
     propagate_at_launch = true
   }
 }
-
+output "test-output-length" {
+  value = "${length(compact(split(",",var.load_balancers)))}"
+}
+output "test-output-signum" {
+  value = "${signum(length(compact(split(",",var.load_balancers))))}"
+}
 resource "aws_autoscaling_group" "asg_elb" {
   # if load balancer id(s) is not empty,
   # this count will be 1 resulting in the creation of this resource
