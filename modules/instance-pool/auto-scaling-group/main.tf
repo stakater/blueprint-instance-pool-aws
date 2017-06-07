@@ -3,9 +3,8 @@
 ## Creates auto scaling group
 resource "aws_autoscaling_group" "asg" {
   # if load balancer id(s) is not given or is empty,
-  # this count will be 1 resulting in the creation of this resource
+  # this count will be 1, resulting in the creation of this resource
   count                     = "${length(var.load_balancers) > 0 ? 0 : 1}"
-  count = 0
   name                      = "${var.lc_id}-asg"
   max_size                  = "${var.max_size}"
   min_size                  = "${var.min_size}"
