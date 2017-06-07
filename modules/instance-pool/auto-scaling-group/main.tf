@@ -4,7 +4,7 @@
 resource "aws_autoscaling_group" "asg" {
   # if load balancer id(s) is not given or is empty,
   # this count will be 1 resulting in the creation of this resource
-  count                     = "${(signum(length(compact([split(",",var.load_balancers)]))) + 1) % 2}"
+  count                     = "${(signum(length(compact(split(",",var.load_balancers)))) + 1) % 2}"
   name                      = "${var.lc_id}-asg"
   max_size                  = "${var.max_size}"
   min_size                  = "${var.min_size}"
@@ -30,7 +30,7 @@ resource "aws_autoscaling_group" "asg" {
 resource "aws_autoscaling_group" "asg_elb" {
   # if load balancer id(s) is not empty,
   # this count will be 1 resulting in the creation of this resource
-  count                     = "${signum(length(compact([split(",",var.load_balancers)])))}"
+  count                     = "${signum(length(compact(split(",",var.load_balancers))))}"
   name                      = "${var.lc_id}-asg"
   max_size                  = "${var.max_size}"
   min_size                  = "${var.min_size}"
