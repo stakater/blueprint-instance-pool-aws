@@ -16,14 +16,6 @@ variable "lc_id" {
 }
 
 ## ASG parameters
-variable "count_asg" {
-  default = 0
-}
-
-variable "count_asg_elb" {
-  default = 0
-}
-
 variable "max_size" {
   type = "string"
 }
