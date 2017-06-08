@@ -52,6 +52,8 @@ module "auto-scaling-group" {
   lc_id = "${module.launch-configuration.launch_configuration_id}"
 
   ### ASG parameters
+  count_asg                 = "${length(var.load_balancers) > 0 ? 0 : 1}"
+  count_asg_elb             = "${length(var.load_balancers) > 0 ? 1 : 0}"
   max_size                  = "${var.max_size}"
   min_size                  = "${var.min_size}"
   desired_capacity          = "${var.desired_size}"
