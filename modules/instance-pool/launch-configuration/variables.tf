@@ -61,7 +61,7 @@ variable "data_ebs_vol_size" {
 }
 
 variable "data_ebs_device_name" {
-  type = "string"
+  type    = "string"
   default = "/dev/sdf"
 }
 
@@ -82,7 +82,7 @@ variable "logs_ebs_vol_size" {
 }
 
 variable "logs_ebs_device_name" {
-  type = "string"
+  type    = "string"
   default = "/dev/sdg"
 }
 

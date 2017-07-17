@@ -49,6 +49,6 @@ variable "load_balancers" {
 }
 
 variable "min_elb_capacity" {
-  type = "string"
-  default = "" # Default value given due to: https://github.com/hashicorp/terraform/issues/8146
+  type    = "string"
+  default = ""       # Default value given due to: https://github.com/hashicorp/terraform/issues/8146
 }

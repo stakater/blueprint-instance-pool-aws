@@ -11,6 +11,7 @@ variable "asg_name" {
   type        = "string"
   description = "Name of the ASG to associate the alarm with."
 }
+
 variable "asg_id" {
   type        = "string"
   description = "ID of the ASG to associate the notifications with."
@@ -27,7 +28,7 @@ variable "notifications" {
 variable "adjustment_type" {
   type        = "string"
   description = "Specifies the scaling adjustment.  Valid values are 'ChangeInCapacity', 'ExactCapacity' or 'PercentChangeInCapacity'."
-  default = "ChangeInCapacity" # Default value given due to: https://github.com/hashicorp/terraform/issues/8146
+  default     = "ChangeInCapacity"                                                                                                      # Default value given due to: https://github.com/hashicorp/terraform/issues/8146
 }
 
 variable "scaling_adjustment" {

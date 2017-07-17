@@ -146,12 +146,12 @@ variable "logs_ebs_vol_del_on_term" {
 }
 
 variable "iam_assume_role_policy" {
-  type = "string"
+  type        = "string"
   description = "Assume role policy for IAM role"
 }
 
 variable "iam_role_policy" {
-  type = "string"
+  type        = "string"
   description = "AWS IAM role policy"
 }
 
