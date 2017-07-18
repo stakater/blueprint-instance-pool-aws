@@ -3,5 +3,5 @@ output "security_group_id" {
 }
 
 output "launch_configuration_id" {
-  value = "${coalesce(join(",",aws_launch_configuration.lc.*.id),join(",",aws_launch_configuration.lc_ebs.*.id))}"
+  value = "${coalesce(join(",",aws_launch_configuration.lc.*.id),join(",",aws_launch_configuration.lc_ebs_data.*.id),join(",",aws_launch_configuration.lc_ebs_data_logs.*.id),)}"
 }
