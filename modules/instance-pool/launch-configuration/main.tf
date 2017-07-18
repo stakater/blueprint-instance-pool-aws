@@ -28,7 +28,7 @@ resource "aws_security_group" "security_group" {
 resource "aws_launch_configuration" "lc" {
   # if ebs device name is not given or is empty,
   # this count will be 1 resulting in the creation of this resource
-  count = "${signum(length(var.data_ebs_device_name)) + 1 % 2}"
+  count = "${(signum(length(var.data_ebs_device_name)) + 1) % 2}"
 
   name_prefix                 = "${var.name}-"
   image_id                    = "${var.ami}"
@@ -56,7 +56,7 @@ resource "aws_launch_configuration" "lc" {
 resource "aws_launch_configuration" "lc_ebs_data" {
   # if ebs device name is not empty, this count will be 1
   # resulting in the creation of this resource
-  count = "${signum(length(var.data_ebs_device_name)) * (signum(length(var.logs_ebs_device_name)) + 1 % 2)}"
+  count = "${signum(length(var.data_ebs_device_name)) * ((signum(length(var.logs_ebs_device_name)) + 1) % 2)}"
 
   name_prefix                 = "${var.name}-"
   image_id                    = "${var.ami}"
