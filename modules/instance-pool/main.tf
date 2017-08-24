@@ -20,7 +20,7 @@ module "launch-configuration" {
   user_data                   = "${var.user_data}"
   enable_monitoring           = "${var.enable_monitoring}"
   ebs_optimized               = "${var.ebs_optimized}"
-  placement_tenancy           = "${var.placement_tenancy}"
+  spot_price                  = "${var.spot_price}"
 
   # Root Volume
   root_vol_type        = "${var.root_vol_type}"
